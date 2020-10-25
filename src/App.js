@@ -152,7 +152,7 @@ function NavFixed (props) {
   return (
     <div className="navFixed invisible">
       <nav className="nav2">
-        <div className="logo">
+        <div className="logo slideIn">
           <img className="logoPic" src={logo} alt="logo"></img>
         </div>
         <ul className="holder2">

@@ -266,6 +266,7 @@ ul {
   margin-left: -12px;
   position: absolute;
   top: 32px;
+  z-index: 5;
 }
 
 .dropdown li {
