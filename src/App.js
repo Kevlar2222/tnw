@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+/* Various image files */
 import search from './search.svg';
 import logo from './tnw.png';
 import finance1 from './finance1.jpeg';
@@ -37,6 +38,7 @@ class App extends React.Component {
   }
 
   handleScroll(e) {
+      /*Fix nav after scrolling 32px*/
       let nav = document.querySelector(".navFixed");
       if(window.scrollY >= 32) {
         nav.classList.remove('invisible');
@@ -47,10 +49,12 @@ class App extends React.Component {
   }
 
   handleMouseIn(e) {
+    /* Hover effects for images */
     if(e.target.classList.contains("searchPic")){
       e.target.classList.remove("bright");
       return;
     }
+    /* Nav dropdown menus on hover */
     if(e.target.firstChild.textContent === "Events ▼") {
       let list = document.querySelector(".dropdown1");
       list.classList.remove("invisible");
@@ -61,6 +65,7 @@ class App extends React.Component {
   }
 
   handleMouseOut() {
+    /* Remove hover effects from images */
     let icon = document.querySelector(".searchPic");
     if(!(icon.classList.contains("bright"))){
       icon.classList.add("bright");
@@ -71,6 +76,7 @@ class App extends React.Component {
       icon2.classList.add("bright");
       return;
     }
+    /* Stop displaying dropdown menus when mouse leaves */
     let list = document.querySelector(".dropdown1");
     if(list.classList.contains("invisible")) {
       document.querySelector(".dropdown2").classList.add("invisible");
@@ -148,6 +154,7 @@ function Nav(props) {
   );
 }
 
+/* Copy of nav that appears on top of original after 32px scrolled, then sticks to top of screen*/
 function NavFixed (props) {
   return (
     <div className="navFixed invisible">
